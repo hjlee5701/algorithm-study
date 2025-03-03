@@ -1,0 +1,23 @@
+- N 을 입력받는다.
+
+- halfIdx
+  - 5 이하는 /2+2 할 시, 길이를 초과함
+  - 최대 범위는 N/2 근처에서 결정
+    - +1 홀수 값
+    - +1 탐색 중, endIdx ++ 로 예외 발생 방지
+      - ex) N=15 -> `21` : `6~8` -> `21` : `6~9` -> `21-6=15` - `6~9` 
+- count = 1 (N 포함)  
+- startIdx = 1
+- endIdx = 1
+- sumNum = 0
+- while (endIdx != N/2+1)
+  - if (sumNum == N)
+    - sumNum += endIdx
+    - endIdx ++
+    - count ++
+  - else-if (sumNum > N)
+    - sumNum -= startIdx
+    - startIdx ++
+  - else (sumNum < N)
+    - sumNum += endIdx
+    - endIdx ++
